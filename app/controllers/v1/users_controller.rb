@@ -5,33 +5,35 @@ class V1::UsersController < ApplicationController
         render json: @users, status: 200
     end
 
+
     def show
       render json: @user
     end
 
     def create
-        @user = User.new(user_params)
+        @user = User.create(user_params)
         if @user.save
             render json: @user, status: :created
         else 
-            render json: {error:"an error occurred, user not created"}, status: 400
+            render json: {error:"An error occured, User not created"}, status: 400
         end
     end
 
     def update
         if @user
             user.update(user_params)
+            render json:{message:"Update was successful"}, status: 200
         else
-            render json: {error:"update was not successful"}, status: 400
+            render json: {error:"An error occured,Update not successful"}, status: 400
         end
     end
 
     def destroy
         if @user 
             @user.destroy
-            render json:{message: "User successfully destroyed"}, status: 200
+            render json:{message: "User was successfully destroyed"}, status: 200
         else
-            render json:{error: "user was not destroyed"}, status: 400
+            render json:{error: "An error occured,User not destroyed"}, status: 400
         end
     end
 
