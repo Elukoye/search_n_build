@@ -15,7 +15,7 @@ class V1::ProjectsController < ApplicationController
         if @project.save
             render json: @project, status: :created
         else 
-            render json: {error:"An error occured, Project not created"}, status: 400
+            render json: {error: @project.errors.full_messages}, status: 400
         end
     end
 
