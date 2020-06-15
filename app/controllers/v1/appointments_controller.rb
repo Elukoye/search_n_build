@@ -14,7 +14,7 @@ class V1::AppointmentsController < ApplicationController
         if @appointment.save
             render json: @appointment, status: :created
         else
-            render json:{error:"An error occurred,Date not created"},status: 400
+            render json:{error: @appointment.errors.full_messages},status: 400
         end
     end
 

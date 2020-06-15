@@ -15,7 +15,7 @@ class V1::UsersController < ApplicationController
         if @user.save
             render json: @user, status: :created
         else 
-            render json: {error:"An error occured, User not created"}, status: 400
+            render json: {error: @user.errors.full_messages}, status: 400
         end
     end
 
