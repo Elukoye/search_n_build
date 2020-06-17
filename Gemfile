@@ -23,6 +23,7 @@ gem 'faker'
 gem 'bootsnap', '>= 1.4.2', require: false
 # token authentication
 gem 'jwt'
+
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
 
