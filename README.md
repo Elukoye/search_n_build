@@ -1,7 +1,7 @@
 # Project: Search_and_Build rails API
 ![Screenshot (167)]()
 
-## Live version of project : [goals_app](https://secret-sierra-04969.herokuapp.com/)
+## Live version of project : [Search_and_Build rails API](https://secret-sierra-04969.herokuapp.com/)
 
 
 ## Description
