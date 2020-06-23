@@ -1,8 +1,6 @@
 # Project: Search_and_Build rails API
-![Screenshot (167)]()
 
 ## Live version of project : [Search_and_Build rails API](https://secret-sierra-04969.herokuapp.com/)
-
 
 ## Description
 This Ruby on Rails capstone is based on an creating API's for selecting tutorials, viewing their details and setting a date on when to build the project.Inspiration for this project was derived from the original capstone project as below: 
@@ -14,34 +12,32 @@ This Ruby on Rails capstone is based on an creating API's for selecting tutorial
 ## Special rules
 Technical mandatory requirements of the project:
 
-- [ ]The database should have at least 2 tables — in this example, motorcycle models and appointments, i.e., the appointments can be accessed by all users unless you implement a proper user authentication (more on this later)
-- Create a user table in your database, so that a given user could only access the objects they created
-- Create endpoints for admin actions: create / update / delete objects (not protected by under "admin" namespace)
-- For the back-end you will use Ruby on Rails
-    - You will create a REST API to manage database resources, in this case, measurements (things to measure could be added manually to the database or from an admin panel)
-- Your API should have a public documentation page similar to this one
+- [ ] The database should have at least 2 tables — in this example, motorcycle models and appointments, i.e., the appointments can be accessed by all users unless you implement a proper user authentication (more on this later)
+- [ ] Create a user table in your database, so that a given user could only access the objects they created
+- [ ] Create endpoints for admin actions: create / update / delete objects (not protected by under "admin" namespace)
+- [ ] For the back-end you will use Ruby on Rails
+    - [ ] You will create a REST API to manage database resources, in this case, measurements (things to measure could be added manually to the database or from an admin panel)
+- [ ]Your API should have a public documentation page similar to this one
    
 ## Technologies
 - [ ] Ruby on Rails
-- [ ] Bootstrap 4
-- [ ] PostgreSQL
+- [ ] Postman
 - [ ] RSpec
-- [ ] Capybara
+- [ ] JWT gem
 
 ## Features
-- [ ] A user can register for an account
-- [ ] A user can login and logout
-- [ ] A user can create activities/projects
-- [ ] A user can create groups/categories
+- [ ] The user logs in the app, only by typing the username
+- [ ] The user is presented with a list of project tutorials that can be built
+- [ ] The user selects a tutorial and has access to the tutorial detail page
+- [ ] In the tutorial detail page, the user can decide to reserve a date to try this tutorial: the user has to select a date and time.
+- [ ] There is a page to check the list of reserved dates for the user
 
 ## Added Feature
-- [ ] Created a drop down menu for every category added in the project/new page.It displayes the most recent category created first.
+- [ ] Implemented token authentication for admin action endpoints
 
 ## Environment
-- [ ] Ruby on Rails version  6.0.2.2
+- [ ] Ruby on Rails version  6.0.3 and above
 - [ ] Ruby version 2.6.5
-- [ ] [Bootstrap 4.3](https://getbootstrap.com) ready to drop right into your Sass powered applications version 6.0
-- [ ] [Add Bootstrap and its dependencies using yarn with this link.](https://www.mashrurhossain.com/blog/rails6bootstrap4)
 - [ ] Puma: A Ruby Web Server Built For Concurrency version 4.1
 - [ ] To get started with tests, install rails-rspec in your Gemfile 
 
@@ -58,17 +54,12 @@ Technical mandatory requirements of the project:
 ## Migrate the database:
 - [ ] Run rails db:migrate to run the migration files
 
-## Run Yarn:
-- [ ] Run Yarn command in terminal incase you get a warning about yarn not being installed
-- [ ] This is because rails version 6 and above uses yarn to install webpacker which bundles and runs Javascript
-files instead of sprockets.
-
 ## Start the rails server:
 - [ ] Run: rails s to start the sever
 - [ ] Type localhost:3000 on your browser(or whatever port you are connected to) to view your app on the browser
 
 ## Running RSpec tests:
-- [ ] Add rails-rspec,capybara and factory_bot gems in :test and :development group in the gemfile
+- [ ] Add rails-rspec to :development group in the gemfile
 - [ ] Run bundle install
 - [ ] Run rails generate rspec:install to generate boilerplate config files
 - [ ] Run rspec command to run the test files
