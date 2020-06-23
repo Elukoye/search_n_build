@@ -1,6 +1,6 @@
 # Project: Search_and_Build rails API
 
-## Live version of project : [Search_and_Build rails API](https://secret-sierra-04969.herokuapp.com/)
+## Live version of project : [Search_and_Build rails API](https://fast-falls-25301.herokuapp.com/)
 
 ## Description
 This Ruby on Rails capstone is based on an creating API's for selecting tutorials, viewing their details and setting a date on when to build the project.Inspiration for this project was derived from the original capstone project as below: 
