@@ -1,25 +1,25 @@
-# Project: Building Goals App
+# Project: Search_and_Build rails API
 ![Screenshot (167)]()
 
 ## Live version of project : [goals_app](https://secret-sierra-04969.herokuapp.com/)
 
 
 ## Description
-This Ruby on Rails capstone is based on an creating API's for grouping activities by categories with your family/friends.It can  also be for grouping hours spent on different projects at your university or for grouping kilometers by means of transportations in your family - anything that you can share with other people and group by some category. 
-You can access all the design info (color, typography, layouts) in
- [Design idea by Gregoire Vella on Behance](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding)
+This Ruby on Rails capstone is based on an creating API's for selecting tutorials, viewing their details and setting a date on when to build the project.Inspiration for this project was derived from the original capstone project as below: 
+**Final Capstone Project [backend-only variant]** is based on an app to book an appointment to try a motorcycle. You will be building an API for this app. You should familiarize yourself with the given design of the website as it is going to be your API client.
+![Screenshot (239)](https://user-images.githubusercontent.com/46542515/85428143-71a2e480-b585-11ea-9f23-cc6302bbae6b.png)
 
 
 
 ## Special rules
-- [ ] Complete Ruby on Rails capstone projects as usual.
-- [ ] For Final capstone project:
-    - [ ] Please read the requirements for both parts: backend and frontend. This will help you to imagine what you need to build.
-   - [ ] Please build only API for the described project.
-    - [ ] In addition:
-       - [ ] Create a user table in your database, so that a given user could only access the objects they created.
-       - [ ] Create endpoints for admin actions: create / update / delete objects.
-        - [ ] Nice to have requirement: implement token authentication for admin action endpoints.
+Technical mandatory requirements of the project:
+
+- [ ]The database should have at least 2 tables — in this example, motorcycle models and appointments, i.e., the appointments can be accessed by all users unless you implement a proper user authentication (more on this later)
+- Create a user table in your database, so that a given user could only access the objects they created
+- Create endpoints for admin actions: create / update / delete objects (not protected by under "admin" namespace)
+- For the back-end you will use Ruby on Rails
+    - You will create a REST API to manage database resources, in this case, measurements (things to measure could be added manually to the database or from an admin panel)
+- Your API should have a public documentation page similar to this one
    
 ## Technologies
 - [ ] Ruby on Rails
