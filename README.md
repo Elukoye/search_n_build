@@ -33,7 +33,7 @@ Technical mandatory requirements of the project:
 - [ ] There is a page to check the list of reserved dates for the user
 
 ## Added Feature
-- [ ] Implemented token authentication for admin action endpoints
+- [ ] Implemented JWT token authentication for admin action endpoints
 
 ## Environment
 - [ ] Ruby on Rails version  6.0.3 and above
@@ -43,7 +43,7 @@ Technical mandatory requirements of the project:
 
 
 ## Getting started
-- [ ] To get started with the app, clone or download the repo :[Clone the repo](https://github.com/Elukoye/goals_app.git)
+- [ ] To get started with the app, clone or download the repo :[Clone the repo](https://github.com/Elukoye/search_n_build.git)
 
 ## Install the gems: 
 - [ ] Run bundle install --without production command in your terminal to install the needed gems in your Gemfile
@@ -90,4 +90,4 @@ Technical mandatory requirements of the project:
 ## Authors
 
 👤 **Author1**
-* [ ] [Emogene Akwiri](https://github.com/Elukoye)
+* [ ] [Emogene Lukoye](https://github.com/Elukoye)
