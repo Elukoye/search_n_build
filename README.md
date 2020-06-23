@@ -17,7 +17,7 @@ Technical mandatory requirements of the project:
 - [ ] Create endpoints for admin actions: create / update / delete objects (not protected by under "admin" namespace)
 - [ ] For the back-end you will use Ruby on Rails
     - [ ] You will create a REST API to manage database resources, in this case, measurements (things to measure could be added manually to the database or from an admin panel)
-- [ ]Your API should have a public documentation page similar to this one
+- [ ] Your API should have a public documentation page similar to this one
    
 ## Technologies
 - [ ] Ruby on Rails
