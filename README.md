@@ -1,6 +1,6 @@
 # Project: Search_and_Build rails API
 
-## Live version of project : [Search_and_Build rails API](https://secret-sierra-04969.herokuapp.com/)
+## Live version of project : [Search_and_Build rails API](https://fast-falls-25301.herokuapp.com/)
 
 ## Description
 This Ruby on Rails capstone is based on an creating API's for selecting tutorials, viewing their details and setting a date on when to build the project.Inspiration for this project was derived from the original capstone project as below: 
@@ -17,7 +17,7 @@ Technical mandatory requirements of the project:
 - [ ] Create endpoints for admin actions: create / update / delete objects (not protected by under "admin" namespace)
 - [ ] For the back-end you will use Ruby on Rails
     - [ ] You will create a REST API to manage database resources, in this case, measurements (things to measure could be added manually to the database or from an admin panel)
-- [ ]Your API should have a public documentation page similar to this one
+- [ ] Your API should have a public documentation page similar to this one
    
 ## Technologies
 - [ ] Ruby on Rails
@@ -25,15 +25,20 @@ Technical mandatory requirements of the project:
 - [ ] RSpec
 - [ ] JWT gem
 
-## Features
-- [ ] The user logs in the app, only by typing the username
-- [ ] The user is presented with a list of project tutorials that can be built
-- [ ] The user selects a tutorial and has access to the tutorial detail page
-- [ ] In the tutorial detail page, the user can decide to reserve a date to try this tutorial: the user has to select a date and time.
-- [ ] There is a page to check the list of reserved dates for the user
+##  API Features
+- [ ] The APIs can Create  a user account by typing the username and password
+- [ ] Client can use the APIs to create a session to login an existing user
+- [ ] The APIs restrict endpoints accessibility for projects and appointments unless the use has been authenticated and has an existing account.
+- [ ] The APIs can be used to fetch data for projects and appointments created by a user.
 
 ## Added Feature
-- [ ] Implemented token authentication for admin action endpoints
+- [ ] Implemented JWT token authentication for admin action endpoints
+
+## Version 
+- [ ] Version 1.0
+
+## Schema
+- [ ] This API uses http requests to access its database in the form of a json response
 
 ## Environment
 - [ ] Ruby on Rails version  6.0.3 and above
@@ -43,7 +48,7 @@ Technical mandatory requirements of the project:
 
 
 ## Getting started
-- [ ] To get started with the app, clone or download the repo :[Clone the repo](https://github.com/Elukoye/goals_app.git)
+- [ ] To get started with the app, clone or download the repo :[Clone the repo](https://github.com/Elukoye/search_n_build.git)
 
 ## Install the gems: 
 - [ ] Run bundle install --without production command in your terminal to install the needed gems in your Gemfile
@@ -85,9 +90,9 @@ Technical mandatory requirements of the project:
 - [ ] Give a ⭐️ if you like this project!
 
 ## 📝 License
-* [ ] See [LICENSE.md](https://github.com/Anna-Myzukina/facebook-clone/blob/master/LICENSE.md) for details.
+* [ ] See [LICENSE.md](https://github.com/Elukoye/search_n_build/blob/master/LICENSE.md) for details.
 
 ## Authors
 
 👤 **Author1**
-* [ ] [Emogene Akwiri](https://github.com/Elukoye)
+* [ ] [Emogene Lukoye](https://github.com/Elukoye)
