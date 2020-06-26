@@ -25,15 +25,20 @@ Technical mandatory requirements of the project:
 - [ ] RSpec
 - [ ] JWT gem
 
-## Features
-- [ ] The user logs in the app, only by typing the username
-- [ ] The user is presented with a list of project tutorials that can be built
-- [ ] The user selects a tutorial and has access to the tutorial detail page
-- [ ] In the tutorial detail page, the user can decide to reserve a date to try this tutorial: the user has to select a date and time.
-- [ ] There is a page to check the list of reserved dates for the user
+##  API Features
+- [ ] The APIs can Create  a user account by typing the username and password
+- [ ] Client can use the APIs to create a session to login an existing user
+- [ ] The APIs restrict endpoints accessibility for projects and appointments unless the use has been authenticated and has an existing account.
+- [ ] The APIs can be used to fetch data for projects and appointments created by a user.
 
 ## Added Feature
 - [ ] Implemented JWT token authentication for admin action endpoints
+
+## Version 
+- [ ] Version 1.0
+
+## Schema
+- [ ] This API uses http requests to access its database in the form of a json response
 
 ## Environment
 - [ ] Ruby on Rails version  6.0.3 and above
