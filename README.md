@@ -90,7 +90,7 @@ Technical mandatory requirements of the project:
 - [ ] Give a ⭐️ if you like this project!
 
 ## 📝 License
-* [ ] See [LICENSE.md](https://github.com/Anna-Myzukina/facebook-clone/blob/master/LICENSE.md) for details.
+* [ ] See [LICENSE.md](https://github.com/Elukoye/search_n_build/blob/master/LICENSE.md) for details.
 
 ## Authors
 
