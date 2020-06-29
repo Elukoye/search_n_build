@@ -1,4 +1,4 @@
-class V1::AppointmentsController < ApplicationController
+class Api::V1::AppointmentsController < ApplicationController
     before_action :find_appointment, only:[:show,:update,:destroy]
     
     def index 
