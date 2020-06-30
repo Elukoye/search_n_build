@@ -20,20 +20,19 @@ class Api::V1::AppointmentsController < ApplicationController
     end
 
     def update
-        @appointment = Appointment.update(appointment_params)
-        if @appointment.save
-            render json: {message:"Date Updated Successfully"}, status: 200
+        if @appointment.update(appointment_params)
+            render json: {message:"Appointment Updated Successfully"}, status: 200
         else
-            render json:{error:"An error occurred,Date not created"},status: 400
+            render json:{error:"An error occurred,appointment not created"},status: 400
         end
     end
 
     def destroy
         if @appointment
             @appointment.destroy
-            render json:{message:"Date successfully destroyed"}
+            render json:{message:"Appointment successfully destroyed"}
         else
-            render json:{error:"An error occurred,Date not created"},status: 400
+            render json:{error:"An error occurred,appointment not destroyed"},status: 400
         end
     end
 

@@ -14,13 +14,13 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :projects, only: %i[create index show]
+      resources :projects, only: %i[create index show destroy]
     end
   end
 
   namespace :api do
     namespace :v1 do
-      resources :appointments, only: %i[index create show destroy]
+      resources :appointments
     end
   end
 end

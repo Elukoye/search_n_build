@@ -11,7 +11,7 @@ class Api::V1::UsersController < ApplicationController
         time = Time.now + 24.hours.to_i
         render json: { token: token, time: time }, status: :ok
       else
-        head(:unprocessable_entity)
+        render json: {error: @project.errors.full_messages}, status: 400
       end
     end
 
