@@ -3,7 +3,7 @@ class Api::V1::ProjectsController < ApplicationController
 
     def index
         @projects = Project.all 
-        render json: @projects, status: :ok
+        render json: @projects, status:200
     end
 
     def show
