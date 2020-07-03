@@ -9,10 +9,4 @@ RSpec.describe 'POST /api/v1/projects', type: :request do
                               description: 'Build a rails music board', hrs: 2.5 } }
     expect(response).to have_http_status(:created)
   end
-
-  it 'returns a bad request response when an attribute is omitted' do
-    post '/api/v1/users',
-         params: { project: { title: 'Build a rails music board' } }
-    expect(response).to have_http_status(400)
-  end
 end

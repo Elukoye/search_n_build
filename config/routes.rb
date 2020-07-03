@@ -18,13 +18,10 @@ Rails.application.routes.draw do
       resources :projects, only: %i[create index show destroy]
     end
   end
-<<<<<<< HEAD
-=======
 
   namespace :api do
     namespace :v1 do
       resources :appointments
     end
   end
->>>>>>> develop
 end
