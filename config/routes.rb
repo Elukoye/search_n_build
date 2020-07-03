@@ -1,15 +1,30 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :sessions, only: %i[create]
-
-  resources :users, only: %i[create index]
-
-  namespace :v1 do
-    resources :projects, only: %i[create index show]
+  namespace :api do
+    namespace :v1 do
+      resources :users, only: %i[create index]
+    end
   end
 
-  namespace :v1 do
-    resources :appointments, only: %i[index create show destroy]
+  namespace :api do
+    namespace :v1 do
+      resources :sessions, only: %i[create]
+    end
   end
+
+  namespace :api do
+    namespace :v1 do
+      resources :projects, only: %i[create index show destroy]
+    end
+  end
+<<<<<<< HEAD
+=======
+
+  namespace :api do
+    namespace :v1 do
+      resources :appointments
+    end
+  end
+>>>>>>> develop
 end
