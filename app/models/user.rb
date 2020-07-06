@@ -2,10 +2,9 @@
 
 class User < ApplicationRecord
   has_secure_password
-
-  has_many :appointments
+  has_many :appointments ,dependent: :destroy
   has_many :projects, through: :appointments
 
-  validates :username, presence: true, length: { maximum: 10 }
+  validates :username, presence: true, uniqueness: true ,length: { maximum: 10 }
   validates :password, presence: true, length: { minimum: 6 }
 end
