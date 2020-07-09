@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Api::V1::AppointmentsController < ApplicationController
+  before_action :authorize_request, only: [:create]
   before_action :find_appointment, only: %i[show update destroy]
 
   def index

@@ -1,7 +1,7 @@
 require 'rails_helper'
 RSpec.describe 'api request from the UsersController', type: :request do
 
-  describe 'post myestateapi/users with complete params' do
+  describe 'sign up a new user with complete params' do
     before do
       post '/api/v1/users',
         params: { user: {
@@ -15,7 +15,7 @@ RSpec.describe 'api request from the UsersController', type: :request do
     end
   end
 
-  describe 'post myestateapi/users with incomplete params' do
+  describe 'sign up a new user with incomplete params' do
     before do
       post '/api/v1/users',
         params: { user: {
@@ -24,7 +24,7 @@ RSpec.describe 'api request from the UsersController', type: :request do
         } }
     end
 
-    it 'returns status code bad request for unsuccessful signup' do
+    it 'returns bad request for unsuccessful signup' do
       expect(response).to have_http_status(400)
     end
   end
