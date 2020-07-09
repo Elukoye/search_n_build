@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 class Api::V1::ProjectsController < ApplicationController
-  #  before_action :authorize_request
+  before_action :authorize_request, only: [:create]
 
   def index
     @projects = Project.all
-    render json: @projects, status: 200
+    render json: @projects, status: :ok
   end
 
   def show
@@ -18,7 +18,7 @@ class Api::V1::ProjectsController < ApplicationController
     if @project.save
       render json: @project, status: :created
     else
-      render json: { error: @project.errors.full_messages }, status: 400
+      render json: { error: @project.errors.full_messages }, status: 401
     end
   end
 

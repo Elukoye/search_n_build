@@ -5,6 +5,6 @@ class User < ApplicationRecord
   has_many :appointments ,dependent: :destroy
   has_many :projects, through: :appointments
 
-  validates :username, presence: true, uniqueness: true ,length: { maximum: 10 }
+  validates :username, presence: true, uniqueness: true
   validates :password, presence: true, length: { minimum: 6 }
 end
