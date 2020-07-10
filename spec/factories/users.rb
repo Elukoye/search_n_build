@@ -5,4 +5,9 @@ FactoryBot.define do
     username { 'Jondoew' }
     password { 'iammorethansix' }
   end
+
+  factory :random_user, class: User do
+    username { 'Jendoew' }
+    password { 'iammorethanenough' }
+  end
 end
