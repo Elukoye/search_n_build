@@ -2,7 +2,7 @@
 
 class User < ApplicationRecord
   has_secure_password
-  has_many :appointments ,dependent: :destroy
+  has_many :appointments, dependent: :destroy
   has_many :projects, through: :appointments
 
   validates :username, presence: true, uniqueness: true
