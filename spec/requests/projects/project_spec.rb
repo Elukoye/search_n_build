@@ -52,7 +52,7 @@ RSpec.describe 'api request made via projects_controller', type: :request do
         it 'show details for selected project to unauthorized users' do
             get "/api/v1/projects/#{@project.id}"
             expect(response).to have_http_status(200)
-          end
+        end
     end
 
 
