@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 RSpec.describe 'api request from the UsersController', type: :request do
   describe 'sign up a new user with complete params' do
