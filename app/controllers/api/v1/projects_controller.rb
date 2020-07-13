@@ -1,5 +1,6 @@
 class Api::V1::ProjectsController < ApplicationController
-  before_action :authorize_request, only: [:create]
+  before_action :authorize_request, only: [:create,:update,:destroy]
+  before_action :find_project, only: %i[show update destroy]
 
   def index
     @projects = Project.all
@@ -7,7 +8,6 @@ class Api::V1::ProjectsController < ApplicationController
   end
 
   def show
-    @project = Project.find(params[:id])
     render json: @project, status: :ok
   end
 
@@ -17,6 +17,14 @@ class Api::V1::ProjectsController < ApplicationController
       render json: @project, status: :created
     else
       render json: { error: @project.errors.full_messages }, status: 401
+    end
+  end
+
+  def update
+    if @project.update(project_params)
+      render json: { message: 'Project Updated Successfully' }, status: 200
+    else
+      render json: { error: 'An error occurred,Project not updated' }, status: 400
     end
   end
 
@@ -33,5 +41,9 @@ class Api::V1::ProjectsController < ApplicationController
 
   def project_params
     params.require(:project).permit(:title, :description, :hrs)
+  end
+
+  def find_project
+    @project = Project.find(params[:id])
   end
 end

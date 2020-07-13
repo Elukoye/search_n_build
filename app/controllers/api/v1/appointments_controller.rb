@@ -1,5 +1,5 @@
 class Api::V1::AppointmentsController < ApplicationController
-  before_action :authorize_request, only: [:create]
+  before_action :authorize_request
   before_action :find_appointment, only: %i[show update destroy]
 
   def index
@@ -24,7 +24,7 @@ class Api::V1::AppointmentsController < ApplicationController
     if @appointment.update(appointment_params)
       render json: { message: 'Appointment Updated Successfully' }, status: 200
     else
-      render json: { error: 'An error occurred,appointment not created' }, status: 400
+      render json: { error: 'An error occurred,appointment not updated' }, status: 400
     end
   end
 
