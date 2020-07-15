@@ -1,5 +1,5 @@
 class Api::V1::UsersController < ApplicationController
-  before_action :authorize_request, only: [:index,:destroy]
+  before_action :authorize_request, only: [:create,:destroy]
   
   def index
     @users = User.all
