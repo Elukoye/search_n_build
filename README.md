@@ -2,7 +2,7 @@
 
 ## Live version of project : [Search_and_Build rails API](https://fast-falls-25301.herokuapp.com/)
 
-## Link to API Documentation: [Search_and_Build rails API](https://documenter.getpostman.com/view/11639084/T17Dg8ox?version=latest)
+## Link to API Documentation: [Search_and_Build rails API](https://documenter.getpostman.com/view/11639084/T17Dg8ox)
 
 
 ## Description
