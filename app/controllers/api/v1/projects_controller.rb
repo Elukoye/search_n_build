@@ -1,5 +1,5 @@
 class Api::V1::ProjectsController < ApplicationController
-  before_action :authorize_request, only: [:create,:update,:destroy]
+  before_action :authorize_request, only: [:show,:create,:update,:destroy]
   before_action :find_project, only: %i[show update destroy]
 
   def index
