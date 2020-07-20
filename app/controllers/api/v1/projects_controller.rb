@@ -30,8 +30,8 @@ class Api::V1::ProjectsController < ApplicationController
 
   def destroy
     if @project
-      @project.destroy
-      render json: { message: 'Project successfully destroyed' }
+       @project.destroy
+       head :no_content  
     else
       render json: { error: 'An error occurred,project not destroyed' }, status: 400
     end

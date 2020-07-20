@@ -17,6 +17,14 @@ RSpec.describe 'api request made via projects_controller', type: :request do
       headers:{'Authorization' => token}}.to change {Appointment.count}.by(1)
       expect(response).to have_http_status(:created)
     end
+
+    it 'lets an authorized user update an appointment' do
+      
+    end
+
+    it 'lets an authorized user destroy an appointment' do
+      
+    end
   end
 
   describe 'Unauthorized users request' do

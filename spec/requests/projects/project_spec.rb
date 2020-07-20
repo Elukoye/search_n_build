@@ -38,5 +38,17 @@ RSpec.describe 'api request made via projects_controller', type: :request do
       expect(JSON.parse(response.body)).to be_an_instance_of(Hash)
       expect(response).to have_http_status(401)
     end
+
+    it 'denies unauthorized users ability to update a project' do
+      put api_v1_project_url(project.id)
+      expect(JSON.parse(response.body)).to be_an_instance_of(Hash)
+      expect(response).to have_http_status(401)
+    end
+
+    it 'denies unauthorized users ability to destroy a project' do
+      delete api_v1_project_url(project.id)
+      expect(JSON.parse(response.body)).to be_an_instance_of(Hash)
+      expect(response).to have_http_status(401)
+    end
   end
 end
