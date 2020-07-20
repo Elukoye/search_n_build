@@ -15,15 +15,21 @@ RSpec.describe 'api request made via projects_controller', type: :request do
         appointment: appointment_attr
       },
       headers:{'Authorization' => token}}.to change {Appointment.count}.by(1)
-      expect(response).to have_http_status(:created)
+      # expect(response).to have_http_status(:created)
     end
 
     it 'lets an authorized user update an appointment' do
-      
+      user = create(:user)
+      project = create(:project)
+      appointment = create(:appointment,user_id: user.id, project_id: project.id)
     end
 
     it 'lets an authorized user destroy an appointment' do
-      
+      user = create(:user)
+      project = create(:project)
+      appointment = create(:appointment,user_id: user.id, project_id: project.id)
+      expect{delete "/api/v1/appointments/#{appointment.id}",
+      headers:{'Authorization' => token}}.to change {Appointment.count}.by(-1)
     end
   end
 

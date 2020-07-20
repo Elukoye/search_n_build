@@ -1,11 +1,6 @@
 FactoryBot.define do
   factory :user do
-    username { 'Jondoew' }
-    password { 'iammorethansix' }
-  end
-
-  factory :random_user, class: User do
-    username { 'Jendoew' }
-    password { 'iammorethanenough' }
+    sequence(:username) { |n| "Jondoew#{n}"}
+    password { 'iammorethansix' } 
   end
 end

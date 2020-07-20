@@ -19,6 +19,35 @@ RSpec.describe 'api request made via projects_controller', type: :request do
       headers:{'Authorization' => token}}.to change {Project.count}.by(1)
       expect(response).to have_http_status(:created)
     end
+
+    it 'lets logged in user to delete a request' do
+      delete "/api/v1/projects/#{project.id}",
+      params:{project: project_attr},
+      headers:{'Authorization' => token}
+      expect(response).to have_http_status(204) 
+    end
+  end
+
+  describe 'PUT request for project' do
+    let(:project) do
+      Project.create!(
+          title:" Ruby Gem ",
+          description:"Create a Ruby Gem from scratch",
+          hrs: 2.5)
+    end
+
+    context "with invalid paramteres" do
+      let(:params) do{
+          title: " ",
+          description: "Some new project description",
+          hrs: 4
+      }
+      end
+      it "returns an authorized response code" do
+        put "/api/v1/projects/#{project.id}", params: params
+        expect(response).to have_http_status(401)
+      end
+    end
   end
 
   describe 'Unauthorization users requests' do
@@ -39,16 +68,10 @@ RSpec.describe 'api request made via projects_controller', type: :request do
       expect(response).to have_http_status(401)
     end
 
-    it 'denies unauthorized users ability to update a project' do
-      put api_v1_project_url(project.id)
-      expect(JSON.parse(response.body)).to be_an_instance_of(Hash)
-      expect(response).to have_http_status(401)
-    end
-
-    it 'denies unauthorized users ability to destroy a project' do
-      delete api_v1_project_url(project.id)
-      expect(JSON.parse(response.body)).to be_an_instance_of(Hash)
+    it 'prevents unauthorized user from deleting a project' do
+      delete "/api/v1/projects/#{project.id}"
       expect(response).to have_http_status(401)
     end
   end
+
 end

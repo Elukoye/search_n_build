@@ -24,16 +24,16 @@ class Api::V1::ProjectsController < ApplicationController
     if @project.update(project_params)
       render json: { message: 'Project Updated Successfully' }, status: 200
     else
-      render json: { error: 'An error occurred,Project not updated' }, status: 400
+      render json: { message: "Authentication is required"}, status: 401
     end
   end
 
   def destroy
     if @project
        @project.destroy
-       head :no_content  
+       head :no_content ,status: 200
     else
-      render json: { error: 'An error occurred,project not destroyed' }, status: 400
+      render json: { message: "Authentication is required"}, status: 401
     end
   end
 

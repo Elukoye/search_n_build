@@ -16,7 +16,7 @@ RSpec.describe Appointment, type: :model do
 
   describe 'appointment created by a non-logged in user' do
     before(:all) do
-      @random_user = create(:random_user)
+      @random_user = create(:user)
       @project = create(:project)
     end
 
