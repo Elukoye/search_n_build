@@ -1,5 +1,5 @@
-# frozen_string_literal: truerequire 
-'rails_helper'RSpec.describe Appointment, type: :request do  
+require 'rails_helper'
+RSpec.describe Appointment, type: :request do  
     include ApiHelper  
     let(:user) { create(:user )}  
     let (:project) { create(:project) }  
@@ -13,7 +13,8 @@
 						params: {appointment: appt_attributes, 
             },           
 						headers: { 'Authorization' => token }}.to change {Appointment.count }.by(1)     
-					 expect(response).to have_http_status(:created) end  
+           expect(response).to have_http_status(:created) 
+          end  
 		end  
 		describe 'Unauthorized users request' do    
 			it 'denies access for unauthorized users to create an appointment' do 
@@ -30,7 +31,8 @@
       end    
       
       it 'show details for selected appointments to unauthorized users' do 
-            get api_v1_appointment_url(appointment.id)      
+            get api_v1_appointment_url(appointment.id)    
+              
             expect(JSON.parse(response.body)).to have_key('date')      
             expect(response).to have_http_status(:ok)    
       end  
