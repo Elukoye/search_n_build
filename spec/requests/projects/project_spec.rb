@@ -21,32 +21,20 @@ RSpec.describe 'api request made via projects_controller', type: :request do
     end
 
     it 'lets logged in user to delete a request' do
-      delete "/api/v1/projects/#{project.id}",
+      expect{delete "/api/v1/projects/#{project.id}",
       params:{project: project_attr},
-      headers:{'Authorization' => token}
+      headers:{'Authorization' => token}}.to change {Project.count}.by(0)
       expect(response).to have_http_status(204) 
     end
-  end
 
-  describe 'PUT request for project' do
-    let(:project) do
-      Project.create!(
-          title:" Ruby Gem ",
-          description:"Create a Ruby Gem from scratch",
-          hrs: 2.5)
-    end
-
-    context "with invalid paramteres" do
-      let(:params) do{
-          title: " ",
-          description: "Some new project description",
-          hrs: 4
-      }
-      end
-      it "returns an authorized response code" do
-        put "/api/v1/projects/#{project.id}", params: params
-        expect(response).to have_http_status(401)
-      end
+    it 'lets an authorized user update a project' do
+      update_proj = create(:project, title: "Create Real Estate App")
+      expect{put "/api/v1/projects/#{update_proj.id}",
+      params:{
+       project: project_attr
+      },
+      headers:{'Authorization' => token}}.to change {Project.count}.by(0)
+      expect(response).to have_http_status(:ok)
     end
   end
 
@@ -66,6 +54,12 @@ RSpec.describe 'api request made via projects_controller', type: :request do
       get api_v1_project_url(project.id)
       expect(JSON.parse(response.body)).to be_an_instance_of(Hash)
       expect(response).to have_http_status(401)
+    end
+
+    it 'prevents unauthorized user from updating a project' do
+      update_proj = create(:project, title: "Create Real Estate App")
+      put "/api/v1/projects/#{update_proj.id}"
+      expect(response).to have_http_status(:unauthorized)
     end
 
     it 'prevents unauthorized user from deleting a project' do

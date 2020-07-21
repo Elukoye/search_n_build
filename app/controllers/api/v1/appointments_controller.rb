@@ -31,7 +31,7 @@ class Api::V1::AppointmentsController < ApplicationController
   def destroy
     if @appointment
       @appointment.destroy
-      render json: { message: 'Appointment successfully destroyed' }
+      render json: { message: 'Appointment successfully destroyed' }, status: 204
     else
       render json: { error: 'An error occurred,appointment not destroyed' }, status: 400
     end

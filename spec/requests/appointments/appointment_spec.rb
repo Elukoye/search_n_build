@@ -15,13 +15,17 @@ RSpec.describe 'api request made via projects_controller', type: :request do
         appointment: appointment_attr
       },
       headers:{'Authorization' => token}}.to change {Appointment.count}.by(1)
-      # expect(response).to have_http_status(:created)
+      expect(response).to have_http_status(:created)
     end
 
-    it 'lets an authorized user update an appointment' do
-      user = create(:user)
-      project = create(:project)
-      appointment = create(:appointment,user_id: user.id, project_id: project.id)
+    it 'lets an authorized user update a project' do
+      update_appointment = create(:appointment, date: "20/8/2020",user_id:user.id, project_id: project.id)
+      expect{put "/api/v1/appointments/#{update_appointment.id}",
+      params:{
+        appointment: appointment_attr
+      },
+      headers:{'Authorization' => token}}.to change {Appointment.count}.by(0)
+      expect(response).to have_http_status(:ok)
     end
 
     it 'lets an authorized user destroy an appointment' do
@@ -30,6 +34,7 @@ RSpec.describe 'api request made via projects_controller', type: :request do
       appointment = create(:appointment,user_id: user.id, project_id: project.id)
       expect{delete "/api/v1/appointments/#{appointment.id}",
       headers:{'Authorization' => token}}.to change {Appointment.count}.by(-1)
+      expect(response).to have_http_status(204) 
     end
   end
 
@@ -50,6 +55,17 @@ RSpec.describe 'api request made via projects_controller', type: :request do
       get api_v1_appointment_url(appointment.id)
       expect(JSON.parse(response.body)).to be_an_instance_of(Hash)
       expect(response).to have_http_status(:unauthorized)
+    end
+
+    it 'prevents unauthorized user from updating an appointment' do
+      update_appointment = create(:appointment, date: "20/8/2020",user_id:user.id, project_id: project.id)
+      put "/api/v1/appointments/#{update_appointment.id}"
+      expect(response).to have_http_status(:unauthorized)
+    end
+
+    it 'prevents unauthorized user from deleting an appointment' do
+      delete "/api/v1/projects/#{appointment.id}"
+      expect(response).to have_http_status(401)
     end
   end
 end
