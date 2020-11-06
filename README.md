@@ -3,7 +3,7 @@
 ## Live version of project : [Search_and_Build rails API](https://fast-falls-25301.herokuapp.com/)
 
 ## Description
-This Ruby on Rails capstone is based on an creating API's for selecting tutorials, viewing their details and setting a date on when to build the project.Inspiration for this project was derived from the original capstone project as below: 
+This Ruby on Rails capstone is based on creating API's for selecting tutorials, viewing their details and setting a date on when to build the project.Inspiration for this project was derived from the original capstone project as below: 
 **Final Capstone Project [backend-only variant]** is based on an app to book an appointment to try a motorcycle. You will be building an API for this app. You should familiarize yourself with the given design of the website as it is going to be your API client.
 ![Screenshot (239)](https://user-images.githubusercontent.com/46542515/85428143-71a2e480-b585-11ea-9f23-cc6302bbae6b.png)
 
