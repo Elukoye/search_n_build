@@ -3,24 +3,9 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      resources :users, only: %i[create index]
-    end
-  end
-
-  namespace :api do
-    namespace :v1 do
+      resources :users, only: %i[create index destroy]
       resources :sessions, only: %i[create]
-    end
-  end
-
-  namespace :api do
-    namespace :v1 do
-      resources :projects, only: %i[create index show destroy]
-    end
-  end
-
-  namespace :api do
-    namespace :v1 do
+      resources :projects
       resources :appointments
     end
   end

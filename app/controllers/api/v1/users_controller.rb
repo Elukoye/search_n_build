@@ -1,6 +1,6 @@
-# frozen_string_literal: true
-
 class Api::V1::UsersController < ApplicationController
+  before_action :authorize_request, only: [:index,:destroy]
+  
   def index
     @users = User.all
     render json: @users, status: 200
@@ -14,6 +14,16 @@ class Api::V1::UsersController < ApplicationController
       render json: { token: token, time: time }, status: 201
     else
       render json: { error: @new_user.errors.full_messages }, status: 400
+    end
+  end
+
+  def destroy
+    @user = User.find_by(id: params[:id])
+    if @user
+      @user.destroy
+      render json: { message: 'Successfully deleted account' }
+    else
+      render json: { error: ' Something went wrong , please try again.' }
     end
   end
 

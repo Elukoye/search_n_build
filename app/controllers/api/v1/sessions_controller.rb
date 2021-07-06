@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Api::V1::SessionsController < ApplicationController
   def create
     @user = User.find_by(username: params[:username])
@@ -9,8 +7,7 @@ class Api::V1::SessionsController < ApplicationController
       render json: { token: token, time: time }, status: :ok
     else
       render json:
-       { error: 'username or password not found' },
-             status: :unauthorized
+       { error: 'username or password not found' }, status: :unauthorized
     end
   end
-  end
+end
